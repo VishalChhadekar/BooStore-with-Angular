@@ -1,0 +1,19 @@
+<div class="container mt-3">
+    <h2>Books Collection.</h2>
+    <!-- <button class="btn btn-primary" (click)="isShowing=!isShowing">
+        <ng-container *ngIf="!isShowing">Show Book</ng-container>
+        <ng-container *ngIf="isShowing">Hide Book</ng-container>
+    </button> -->
+    <ul *ngIf="isShowing" class="flex flex-wrap justify-center">
+        <ng-container *ngFor="let singleBook of books let i=index">
+            <!-- listen an event: emitted by book, after user clicked on addToCard -->
+            <app-book (emitBook)="addToCart($event)" [book]="singleBook"></app-book>
+        </ng-container>
+    </ul>
+    <!-- reading an updating value at same time -->
+    <!-- Name: <input type="text" ((change))="handleInput($event)" name="name" >  -->
+    <!-- TO WAY BINDING -->
+    <!-- Name: <input type="text" [(ngModel)]="updatedName" name="name" > 
+    <p>{{updatedName}} </p> -->
+    <!-- <button class="btn btn-primary" [disabled]="isDisabled" (click)="onClick()">Show More</button> -->
+</div>

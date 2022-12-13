@@ -1,0 +1,12 @@
+<li class="flex border rounded-xl h-60">
+    <img [src]="book.img_source" width="100" alt="{{book.name}}" class="m-auto rounded-sm" />
+    <div class="m-auto">
+        <p>{{book.name}} by {{book.author}}</p>
+        <p>Price: {{book.amount | currency: 'INR'}} </p>
+        <!-- For transforming amount to INR we are using angular pipes -->
+        <button *ngIf="!isInCart" class="btn btn-primary btn-sm" (click)="addToCart()" class="bg-yellow-400 rounded p-3">Add to
+            Cart</button>
+        <button *ngIf="isInCart"  (click)="removeFromCart()"
+            class="bg-yellow-400 rounded p-3 btn-sm">Remove from Cart</button>
+    </div>
+</li>
