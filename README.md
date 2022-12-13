@@ -1,1 +1,1 @@
-# BooStore-with-Angular
+# BookStore-with-Angular
